@@ -1,0 +1,1 @@
+# locatorspell-django
