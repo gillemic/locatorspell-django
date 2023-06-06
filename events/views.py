@@ -1,9 +1,14 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse, Http404
+
+from .models import Event
 
 # Create your views here.
 def index(request):
-  return HttpResponse("You're at the events index.")
+  event_list = Event.objects.order_by("-start_date")[:5]
+  context = {"event_list": event_list}
+  return render(request, "events/index.html", context)
 
-def home(request):
-  return HttpResponse("You're at the home page.")
+def detail(request, event_id):
+    event = get_object_or_404(Event, pk=event_id)
+    return render(request, "events/detail.html", {"event": event})
