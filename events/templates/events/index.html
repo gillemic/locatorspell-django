@@ -1,9 +1,24 @@
-{% if event_list %}
-    <ul>
-    {% for event in event_list %}
-        <li><a href="{% url events:detail event.id %}">{{ event.name }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No events are available.</p>
-{% endif %}
+{% extends 'base.html' %}
+
+{% block title %}
+	Welcome to the home screen
+{% endblock %}
+
+{% block nav %}
+<nav>
+	<a href="/">Home</a>
+	<a href="{% url 'events:index' %}">Events</a>
+</nav>
+{% endblock %}
+
+{% block content %}
+    {% if event_list %}
+        <ul>
+        {% for event in event_list %}
+            <li><a href="{% url 'events:detail' event.id %}">{{ event.name }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No events are available.</p>
+    {% endif %}
+{% endblock %}
