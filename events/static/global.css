@@ -1,0 +1,16 @@
+body {
+	position: relative;
+	min-height: 100vh;
+}
+
+.below-header {
+	padding-bottom: 2.5rem;
+}
+
+footer {
+	width: 100%;
+	bottom: 0;
+	margin-top: 1rem;
+	position: absolute;
+	text-align: center;
+}

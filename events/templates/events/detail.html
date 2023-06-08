@@ -1,1 +1,16 @@
-{{ event }}
+{% extends 'base.html' %}
+
+{% block title %}
+	{{ event.name }}
+{% endblock %}
+
+{% block nav %}
+<nav>
+	<a href="/">Home</a>
+	<a href="{% url 'events:index' %}">Events</a>
+</nav>
+{% endblock %}
+
+{% block content %}
+    {{ event }}
+{% endblock %}

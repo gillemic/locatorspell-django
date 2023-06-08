@@ -1,16 +1,31 @@
-{% extends 'base.html' %}
+{% extends 'landing.html' %}
 
 {% block title %}
 	Welcome to the home screen
 {% endblock %}
 
-{% block nav %}
-<nav>
-	<a href="/">Home</a>
-	<a href="{% url 'events:index' %}">Events</a>
-</nav>
-{% endblock %}
-
 {% block content %}
-<h1>Welcome to the site</h1>
+<div class="below-header">
+	<form action="/events" method="GET">
+		<div class="search-bar">
+			<input type="text" class="quickSearch" name="query"
+				placeholder="Quick Cast" />
+			<button class="search-button" type="submit">
+				Search
+			</button>
+		</div>
+	</form>
+	<div class="blog-posts">
+		<div class="blog-post">
+			<h4>Blog Title 1 That Can Go On Two Lines</h4>
+			<p>Example text composed of part of the blog post</p>
+			<small>03/07/2023</small>
+		</div>
+		<div class="blog-post">
+			<h4>Blog Title 2 That Can Go On Two Lines</h4>
+			<p>Example text composed of part of the blog post</p>
+			<small>03/08/2023</small>
+		</div>
+	</div>
+</div>
 {% endblock %}
