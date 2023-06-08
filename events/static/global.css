@@ -1,10 +1,93 @@
+:root {
+    --main-bg-color: white;
+    --second-color: #d9d9d9;
+    --third-color: #000000;
+    --fourth-color: #5f4bb6;
+    --fifth-color: #9e829c;
+}
+
 body {
 	position: relative;
 	min-height: 100vh;
+	margin: 0;
+}
+
+.header {
+    width: 100%;
+    display: block;
+    margin-bottom: 2rem;
 }
 
 .below-header {
 	padding-bottom: 2.5rem;
+}
+
+.navbar-top {
+    width: 100%;
+    justify-content: center;
+}
+
+.navbar-image {
+    display: block;
+    padding-bottom: 0;
+}
+
+.navbar-title {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding-top: 0;
+}
+
+.navbar-title h2 {
+    margin-top: 0;
+}
+
+.nav-links {
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.nav-links a {
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+}
+
+.navbar-top {
+    align-items: center;
+    display: inline-flex;
+    width: 100%;
+    flex-wrap: wrap;
+	background: var(--second-color);
+}
+
+.navbar-top img {
+    height: 8rem;
+    width: 8rem;
+    margin-bottom: 0;
+    margin-right: 0;
+    justify-content: center;
+}
+
+.nav-links {
+    background-color: #c5c5c5;
+    display: inline-flex;
+    width: 100%;
+    padding: 1rem;
+}
+
+.nav-links a {
+    color: var(--third-color);
+}
+
+.nav-links a:hover {
+    color: blue;
+    transition: 0.5s;
+}
+
+.nav-links a:visited {
+    color:rgb(156, 0, 190);
 }
 
 footer {
