@@ -10,5 +10,7 @@
 {% endblock %}
 
 {% block content %}
-    <h2>{{ blog.name }}</h2>
+    <h2>{{ blog.title }}</h2>
+    <small>Date posted: {{ blog.date_posted }}</small>
+    <p>{{ blog.post }}</p>
 {% endblock %}

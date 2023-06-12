@@ -1,0 +1,10 @@
+#blog-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#blog-list a {
+    color: blue;
+    font-size: 2rem;
+}
