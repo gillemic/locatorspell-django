@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="{% static 'global.css' %}">
-		<link rel="stylesheet" href="{% static 'text_styling.css' %}">
+		<link rel="stylesheet" href="{% static 'css/global.css' %}">
+		<link rel="stylesheet" href="{% static 'css/text_styling.css' %}">
     {% block head %}
     {% endblock %}
     <link rel="icon" type="image/x-icon" href="{% static 'img/Logo1.ico' %}">
@@ -34,16 +34,18 @@
         <div class="nav-links">
           <div class="call-out">
             <a href="{% url 'about' %}">About Us</a> | 
-            <a href="">Blog</a> | 
+            <a href="{% url 'blog:index' %}">Blog</a> | 
             <a href="{% url 'events:index' %}">Events</a>
           </div>
         </div>
       </nav>
     {% endblock navbar %}
-     
-    {% block content %}
 
-    {% endblock content %}
+    <div class="main-body"> 
+      {% block content %}
+
+      {% endblock content %}
+    </div>
     
     {% block footer %}
          <footer>Copyright © 2023  locatorspell.com</footer>

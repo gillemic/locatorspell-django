@@ -2,21 +2,21 @@
 {% load static %}
 
 {% block title %}
-	Events
+	Blog
 {% endblock %}
 
 {% block head %}
-<link rel="stylesheet" href="{% static 'css/events.css' %}">
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
 {% endblock %}
 
 {% block content %}
-    {% if event_list %}
-        <ul id="event-list">
+    {% if blog_list %}
+        <ul>
         {% for event in event_list %}
-            <li><a href="{% url 'events:detail' event.id %}">{{ event.name }}</a></li>
+            <li><a href="{% url 'blog:detail' blog.id %}">{{ blog.name }}</a></li>
         {% endfor %}
         </ul>
     {% else %}
-        <p>No events are available.</p>
+        <p>No blog entries are available.</p>
     {% endif %}
 {% endblock %}

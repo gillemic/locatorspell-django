@@ -1,0 +1,13 @@
+#event-list {
+    list-style: none;
+    padding: 0;
+}
+
+#event-list a {
+    color: blue;
+    font-size: 2rem;
+}
+
+.main-body {
+    margin: 0 1rem;
+}

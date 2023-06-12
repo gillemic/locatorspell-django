@@ -43,16 +43,6 @@ body {
     margin-top: 0;
 }
 
-.nav-links {
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-}
-
-.nav-links a {
-    font-size: 1.5rem;
-}
-
 .navbar-top {
     align-items: center;
     display: inline-flex;
@@ -73,11 +63,16 @@ body {
     background-color: #c5c5c5;
     display: inline-flex;
     width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
     padding: 1rem;
 }
 
 .nav-links a {
     color: var(--third-color);
+    font-size: 1.25rem;
+    padding: 0 0.5rem;
 }
 
 .nav-links a:hover {
@@ -87,6 +82,10 @@ body {
 
 .nav-links a:visited {
     color:rgb(156, 0, 190);
+}
+
+.main-body {
+    margin: 0 1rem;
 }
 
 footer {
