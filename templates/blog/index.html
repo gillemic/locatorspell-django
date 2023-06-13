@@ -10,7 +10,8 @@
 {% endblock %}
 
 {% block content %}
-    <h2>Blog Posts</h2>
+<div class="blog">
+    <h1>Blog Posts</h1>
     {% if blog_list %}
         <ul id="blog-list">
         {% for blog in blog_list %}
@@ -20,4 +21,5 @@
     {% else %}
         <p>No blog entries are available.</p>
     {% endif %}
+</div>
 {% endblock %}
