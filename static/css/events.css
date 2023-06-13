@@ -12,6 +12,12 @@
 
 .main-body {
     margin: 0 1rem;
+    display: flex;
+}
+
+#spell-components {
+    min-width: 20%;
+    padding: 0 1rem;
 }
 
 .event {
@@ -23,7 +29,7 @@
     font-family: 'Roboto', sans-serif;
     padding: 1rem;
     margin: 1rem;
-    flex: 1 1 20%;
+    flex: 1 1 25%;
     max-width: 20%;
     min-width: 200px;
     min-height: 200px;

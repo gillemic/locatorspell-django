@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-	{{ blog.name }}
+	{{ blog.title }}
 {% endblock %}
 
 {% block head %}
@@ -10,7 +10,11 @@
 {% endblock %}
 
 {% block content %}
+<div class="blog">
     <h2>{{ blog.title }}</h2>
     <small>Date posted: {{ blog.date_posted }}</small>
     <p>{{ blog.post }}</p>
+    <br>
+    <a href="javascript:history.back()">Back to blog posts</a>
+</div>
 {% endblock %}
