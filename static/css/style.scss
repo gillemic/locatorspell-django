@@ -9,16 +9,13 @@ $fifth-color: #9e829c;
     padding: 0;
 }
 
-
 body {
     background: $main-bg-color;
 	position: relative;
 	min-height: 100vh;
-	margin: 0;
 }
 
-
-/* TEXT STYLING */
+/* GENERAL TEXT STYLING */
 
 /* page titles and headers */
 h1 {
@@ -64,14 +61,8 @@ h4 {
     text-transform: capitalize;
 }
 
-a:link {
-  color: #1690a8;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:visited {
-  color: #5C2B69;
+a {
+  color: $fourth-color;
   background-color: transparent;
   text-decoration: none;
 }
@@ -89,7 +80,10 @@ a:active {
 }
 
 p {
-    margin-left: 0;
+    font-size: 14pt;
+    color: Black;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
 }
 
 footer {
@@ -100,7 +94,7 @@ footer {
 	text-align: center;
 }
 
-/* CLASSES */
+/* GENERAL CLASSES */
 
 .title-overlay {
   font-size: 25vw;
@@ -153,10 +147,6 @@ footer {
     padding-top: 0;
 }
 
-.navbar-title h2 {
-    margin-top: 0;
-}
-
 .navbar-top {
     width: 100%;
     justify-content: center;
@@ -182,37 +172,23 @@ footer {
     align-items: center;
     justify-content: center;
     margin: auto;
-    padding: 1rem;
-}
+    padding: 1rem 0;
 
-.nav-links a {
-    color: $fourth-color;
-    font-size: 1.25rem;
-    padding: 0 0.5rem;
-}
-
-.nav-links a:hover {
-    color: blue;
-    transition: 0.5s;
-}
-
-.nav-links a:visited {
-    color:rgb(156, 0, 190);
+    a {
+        padding: 0 0.5rem;
+    }
 }
 
 .main-body {
     margin: 0 1rem;
+    display: flex;
+}
+
+.hide {
+    display: none;
 }
 
 /* LANDING PAGE */
-
-.default {
-    margin: 0px;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
 
 .welcome-vid {
     /*margin-top: 12em;*/
@@ -251,6 +227,7 @@ footer {
 }
 
 .title-overlay {
+    background-color: $second-color;
     text-align: center;
     height: auto;
     width: auto;
@@ -258,8 +235,7 @@ footer {
     /*position: absolute;*/
     top: calc(13% - 3vh);
     margin: auto;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    padding: 2rem 0 1rem 0;
 }
 
 .search-button {
@@ -276,6 +252,10 @@ footer {
     font-family: 'Akshar', sans-serif;
     text-transform: capitalize;
     margin-top: 1rem;
+}
+
+.search-button:hover {
+    background-color: #1EC5F7;
 }
 
 .blog-posts {
@@ -300,15 +280,58 @@ footer {
     border-radius: 2px;
 }
 
-.footer {
-    margin-top: 1rem;
-    text-align: center;
-    width: 100%;
-    bottom: 0;
+/* BLOG PAGE */
+
+#blog-list {
+    list-style-type: none;
+    margin: 1rem 0;
 }
 
-button:hover {
-    background-color: #1EC5F7;
+#blog-list a {
+    font-size: 2rem;
+    padding: 0.5rem 0;
+}
+
+.blog {
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ABOUT */
+
+.about {
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about h2 {
+    padding: 0 2rem;
+}
+
+.about p {
+    font-size: 1.75rem;
+    padding: 2rem;
+    margin: 0;
+}
+
+.about a {
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.about img {
+    width:25%; 
+    flex-shrink: 1;
+}
+
+.kofi-link {
+    text-align: center; 
 }
 
 /* EVENTS */
@@ -317,17 +340,10 @@ button:hover {
     padding: 0;
     display: flex;
     justify-content: flex-start;
-    gap: 0.5rem;
 }
 
 #event-list a:hover {
-    color: black;
     text-decoration: none;
-}
-
-.main-body {
-    margin: 0 1rem;
-    display: flex;
 }
 
 #spell-components {
@@ -377,60 +393,6 @@ button:hover {
 
 .event div {
     margin: 0.5rem 0;
-}
-
-/* BLOG */
-
-#blog-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-#blog-list a {
-    color: blue;
-    font-size: 2rem;
-}
-
-.blog {
-    display: block;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* ABOUT */
-
-.about {
-    display: block;
-    width: 100%;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.about h2 {
-    padding: 0 2rem;
-}
-
-.about p {
-    font-size: 1.75rem;
-    padding: 2rem;
-    margin: 0;
-}
-
-.about a {
-    display: block; 
-    margin-left: auto; 
-    margin-right: auto;
-}
-
-.about img {
-    width:25%; 
-    flex-shrink: 1;
-}
-
-.kofi-link {
-    text-align: center; 
 }
 
 /* MODAL FOR EVENTS PAGE */
@@ -501,8 +463,4 @@ button:hover {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
-}
-
-.hide {
-    display: none;
 }

@@ -5,10 +5,9 @@
 body {
   background: #FFFFFF;
   position: relative;
-  min-height: 100vh;
-  margin: 0; }
+  min-height: 100vh; }
 
-/* TEXT STYLING */
+/* GENERAL TEXT STYLING */
 /* page titles and headers */
 h1 {
   /*font-size: 37pt;*/
@@ -49,13 +48,8 @@ h4 {
   font-family: 'Akshar', sans-serif;
   text-transform: capitalize; }
 
-a:link {
-  color: #1690a8;
-  background-color: transparent;
-  text-decoration: none; }
-
-a:visited {
-  color: #5C2B69;
+a {
+  color: #5f4bb6;
   background-color: transparent;
   text-decoration: none; }
 
@@ -70,7 +64,10 @@ a:active {
   text-decoration: underline; }
 
 p {
-  margin-left: 0; }
+  font-size: 14pt;
+  color: Black;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif; }
 
 footer {
   width: 100%;
@@ -79,7 +76,7 @@ footer {
   position: absolute;
   text-align: center; }
 
-/* CLASSES */
+/* GENERAL CLASSES */
 .title-overlay {
   font-size: 25vw; }
 
@@ -123,9 +120,6 @@ footer {
   text-align: center;
   padding-top: 0; }
 
-.navbar-title h2 {
-  margin-top: 0; }
-
 .navbar-top {
   width: 100%;
   justify-content: center;
@@ -149,31 +143,18 @@ footer {
   align-items: center;
   justify-content: center;
   margin: auto;
-  padding: 1rem; }
-
-.nav-links a {
-  color: #5f4bb6;
-  font-size: 1.25rem;
-  padding: 0 0.5rem; }
-
-.nav-links a:hover {
-  color: blue;
-  transition: 0.5s; }
-
-.nav-links a:visited {
-  color: #9c00be; }
+  padding: 1rem 0; }
+  .nav-links a {
+    padding: 0 0.5rem; }
 
 .main-body {
-  margin: 0 1rem; }
+  margin: 0 1rem;
+  display: flex; }
+
+.hide {
+  display: none; }
 
 /* LANDING PAGE */
-.default {
-  margin: 0px;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; }
-
 .welcome-vid {
   /*margin-top: 12em;*/
   pointer-events: none;
@@ -208,6 +189,7 @@ footer {
   text-transform: capitalize; }
 
 .title-overlay {
+  background-color: #d9d9d9;
   text-align: center;
   height: auto;
   width: auto;
@@ -215,8 +197,7 @@ footer {
   /*position: absolute;*/
   top: calc(13% - 3vh);
   margin: auto;
-  margin-top: 2rem;
-  margin-bottom: 1rem; }
+  padding: 2rem 0 1rem 0; }
 
 .search-button {
   border-radius: 2px;
@@ -232,6 +213,9 @@ footer {
   font-family: 'Akshar', sans-serif;
   text-transform: capitalize;
   margin-top: 1rem; }
+
+.search-button:hover {
+  background-color: #1EC5F7; }
 
 .blog-posts {
   display: flex;
@@ -253,29 +237,57 @@ footer {
   border: 2px solid #1690a8;
   border-radius: 2px; }
 
-.footer {
-  margin-top: 1rem;
-  text-align: center;
-  width: 100%;
-  bottom: 0; }
+/* BLOG PAGE */
+#blog-list {
+  list-style-type: none;
+  margin: 1rem 0; }
 
-button:hover {
-  background-color: #1EC5F7; }
+#blog-list a {
+  font-size: 2rem;
+  padding: 0.5rem 0; }
+
+.blog {
+  display: block;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; }
+
+/* ABOUT */
+.about {
+  display: block;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.about h2 {
+  padding: 0 2rem; }
+
+.about p {
+  font-size: 1.75rem;
+  padding: 2rem;
+  margin: 0; }
+
+.about a {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.about img {
+  width: 25%;
+  flex-shrink: 1; }
+
+.kofi-link {
+  text-align: center; }
 
 /* EVENTS */
 #event-list {
   padding: 0;
   display: flex;
-  justify-content: flex-start;
-  gap: 0.5rem; }
+  justify-content: flex-start; }
 
 #event-list a:hover {
-  color: black;
   text-decoration: none; }
-
-.main-body {
-  margin: 0 1rem;
-  display: flex; }
 
 #spell-components {
   min-width: 20%;
@@ -319,49 +331,6 @@ button:hover {
 
 .event div {
   margin: 0.5rem 0; }
-
-/* BLOG */
-#blog-list {
-  list-style-type: none;
-  padding: 0; }
-
-#blog-list a {
-  color: blue;
-  font-size: 2rem; }
-
-.blog {
-  display: block;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto; }
-
-/* ABOUT */
-.about {
-  display: block;
-  width: 100%;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto; }
-
-.about h2 {
-  padding: 0 2rem; }
-
-.about p {
-  font-size: 1.75rem;
-  padding: 2rem;
-  margin: 0; }
-
-.about a {
-  display: block;
-  margin-left: auto;
-  margin-right: auto; }
-
-.about img {
-  width: 25%;
-  flex-shrink: 1; }
-
-.kofi-link {
-  text-align: center; }
 
 /* MODAL FOR EVENTS PAGE */
 #modal {
@@ -435,8 +404,5 @@ button:hover {
   color: #bbb;
   text-decoration: none;
   cursor: pointer; }
-
-.hide {
-  display: none; }
 
 /*# sourceMappingURL=style.css.map */
