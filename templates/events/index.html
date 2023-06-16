@@ -5,10 +5,6 @@
 	Events
 {% endblock %}
 
-{% block head %}
-<link rel="stylesheet" href="{% static 'css/events.css' %}">
-{% endblock %}
-
 {% block content %}
     <div id="spell-components">
         <h3>Spell Components</h3>
@@ -38,4 +34,13 @@
     {% else %}
         <p>No events are available.</p>
     {% endif %}
+    <div id="modal" onclick="hideModal()">
+        <!-- The Close Button -->
+        <span class="close" onclick="hideModal()">&times;</span>
+        <!-- Modal Content (Event Info) -->
+        <div id="modal-content">
+          <div id="google-map">Google maps space</div>
+          <div id="event-info"></div>
+        </div>
+      </div>
 {% endblock %}
