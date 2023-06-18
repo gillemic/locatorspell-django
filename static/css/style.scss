@@ -80,10 +80,10 @@ a:active {
 }
 
 p {
-    font-size: 14pt;
-    color: Black;
-    font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+  font-size: 14pt;
+  color: Black;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
 }
 
 footer {
@@ -124,6 +124,12 @@ footer {
     line-height: 12px;
     font-family: 'Roboto', sans-serif;
 }
+
+.hide {
+    display: none;
+}
+
+/* HEADER AND NAVBAR */
 
 .header {
     width: 100%;
@@ -182,11 +188,10 @@ footer {
 .main-body {
     margin: 0 1rem;
     display: flex;
+    flex-wrap: wrap;
 }
 
-.hide {
-    display: none;
-}
+
 
 /* LANDING PAGE */
 
@@ -339,7 +344,9 @@ footer {
 #event-list {
     padding: 0;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex: 2 2 50%;
 }
 
 #event-list a:hover {
@@ -347,8 +354,38 @@ footer {
 }
 
 #spell-components {
+    flex: 1 1;
     min-width: 20%;
+    width: auto;
     padding: 0 1rem;
+    align-items: flex-start;
+    justify-content: center;
+    display: inline-grid;
+    margin: auto;
+    form {
+        margin: 2rem 0;
+        display: inline-grid;
+    }
+    input {
+        margin: 0.5rem 0 1rem 0;
+        line-height: 1.5rem;
+    }
+}
+
+#hide-button {
+    display: block;
+}
+
+#show-button {
+    display: none;
+}
+
+#search-plus-list {
+    flex: 2 2 75%;
+}
+
+#no-results {
+    display: none;
 }
 
 .event {
@@ -358,8 +395,9 @@ footer {
     font-weight: 400;
     line-height: 20px;
     font-family: 'Roboto', sans-serif;
+	padding: 0.5rem;
     margin: 1rem;
-    flex: 1 1 25%;
+    flex: 1 1 20%;
     max-width: 20%;
     min-width: 200px;
     min-height: 200px;
@@ -393,6 +431,22 @@ footer {
 
 .event div {
     margin: 0.5rem 0;
+}
+
+.event-search {
+	display:flex;
+	justify-content: center;
+	width: 100%;
+	margin: auto;
+	align-items: center;
+	input {
+		margin: 0.5rem;
+        min-width: 33%;
+	}
+	button {
+		margin: 0.5rem;
+        align-self: center;
+	}
 }
 
 /* MODAL FOR EVENTS PAGE */

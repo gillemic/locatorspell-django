@@ -8,7 +8,7 @@
 {% block content %}
     <div id="spell-components">
         <h3>Spell Components</h3>
-        <form method="GET" action="/events">
+        <form id="main-form" method="GET" action="/events">
             <p>Event Name</p>
             <input type="text" name="activity" placeholder="Type here...">
             <p>Location</p>
@@ -17,23 +17,41 @@
             <br>
             <input type="Submit" value="Search">
         </form>
-    </div>
-    {% if event_list %}
-    <div id="event-list">
-    {% for event in event_list %}
-        <div class="event">
-            <a href="{% url 'events:detail' event.id %}">
-                <h2>{{ event.name }}</h2>
-                <p>{{ event.tournament_organizer }}</p>
-                <p>{{ event.location }}</p>
-                <p>{{ event.start_date }}</p> 
-            </a>
+        <div class="showhide-wrapper">
+            <a id="hide-button" onclick="hideSearch()">Hide Advanced Search</a>
+            <a id="show-button" onclick="showSearch()">Show Advanced Search</a>
         </div>
-    {% endfor %}
     </div>
-    {% else %}
-        <p>No events are available.</p>
-    {% endif %}
+    <div id="search-plus-list">
+        <div id="results">
+            {% if query and query != '' %}
+            <p>Showing results for: "{{ query }}"</p>
+            {% endif %}
+        </div>
+        <div class="event-search">
+            <input type="text" id="event-search" placeholder="Quick Cast" onkeyup="quickSearch(this.value)"/>
+            <button onclick="clearFields()">Clear</button>
+        </div>
+        {% if event_list %}
+        <div id="event-list">
+        {% for event in event_list %}
+            <div class="event">
+                <!-- <a href="{% url 'events:detail' event.id %}"> -->
+                    <h2>{{ event.name }}</h2>
+                    <p class="body-text">{{ event.tournament_organizer }}</p>
+                    <p class="body-text">{{ event.location }}</p>
+                    <p class="body-text">{{ event.start_date }}</p>
+                    <a href="{% url 'events:detail' event.id %}">Go to event page</a> 
+                <!-- </a> -->
+            </div>
+        {% endfor %}
+        </div>
+        {% else %}
+            <p id="no-results">No events are available.</p>
+        {% endif %}
+    </div>
+    
+
     <div id="modal" onclick="hideModal()">
         <!-- The Close Button -->
         <span class="close" onclick="hideModal()">&times;</span>
@@ -42,5 +60,11 @@
           <div id="google-map">Google maps space</div>
           <div id="event-info"></div>
         </div>
-      </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script>
+      events_clickable()  
+    </script>
 {% endblock %}
