@@ -15,7 +15,7 @@ LOCATION_CHOICES = (
 )
 
 PRICE_CHOICES = (
-    ("Any", "Any"),
+    ("0", "Any"),
     ("0", "Free"),
     ("5", "$5+"),
     ("10", "$10+"),

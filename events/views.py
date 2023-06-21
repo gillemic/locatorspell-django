@@ -8,6 +8,20 @@ from .forms import EventSearchForm
 def index(request):
   event_list = Event.objects.order_by("-start_date")[::-1]
   form = EventSearchForm()
+  
+  if request.method == 'GET':
+    activity = request.GET.get('activity', None)
+    location = request.GET.get('location', None)
+    #start_date = request.GET.get('start_date', '')
+    #end_date = request.GET.get('end_date', '')
+    price = request.GET.get('price', 0)
+    category = request.GET.get('category', None)
+
+    if activity is not None:
+      event_list = Event.objects.filter(event_type=activity)
+    if location is not None:
+      event_list = event_list.filter(location=location)
+
   context = {"event_list": event_list, "form": form}
   return render(request, "events/index.html", context)
 
