@@ -9,12 +9,8 @@
     <div id="spell-components">
         <h3>Spell Components</h3>
         <form id="main-form" method="GET" action="/events">
-            <p>Event Name</p>
-            <input type="text" name="activity" placeholder="Type here...">
-            <p>Location</p>
-            <input type="text" name="location" placeholder="Type here...">
-            <br>
-            <br>
+            {% csrf_token %}
+            {{ form }}
             <input type="Submit" value="Search">
         </form>
         <div class="showhide-wrapper">

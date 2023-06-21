@@ -360,11 +360,13 @@ footer {
     padding: 0 1rem;
     align-items: flex-start;
     justify-content: center;
-    display: inline-grid;
+    display: grid;
     margin: auto;
+    z-index: 1;
     form {
-        margin: 2rem 0;
+        margin: 1rem 0 0 0;
         display: inline-grid;
+        width: 100%;
     }
     input {
         margin: 0.5rem 0 1rem 0;
@@ -447,6 +449,10 @@ footer {
 		margin: 0.5rem;
         align-self: center;
 	}
+}
+
+.showhide-wrapper {
+    text-align: center;
 }
 
 /* MODAL FOR EVENTS PAGE */

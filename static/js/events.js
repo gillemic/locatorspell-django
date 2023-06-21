@@ -30,7 +30,7 @@ function showSearch() {
     let hideButton = document.getElementById('hide-button');
     let showButton = document.getElementById('show-button');
     
-    form.style.display = 'block';
+    form.style.display = 'inline-grid';
     hideButton.style.display = 'block';
     showButton.style.display = 'none';
 }
