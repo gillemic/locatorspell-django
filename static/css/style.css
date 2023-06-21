@@ -307,6 +307,8 @@ footer {
     margin: 1rem 0 0 0;
     display: inline-grid;
     width: 100%; }
+    #spell-components form label {
+      font-size: 1rem; }
   #spell-components input {
     margin: 0.5rem 0 1rem 0;
     line-height: 1.5rem; }
