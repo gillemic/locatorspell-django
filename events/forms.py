@@ -2,7 +2,7 @@ from django import forms
 from datetime import date
 
 ACTIVITY_CHOICES = (
-    ("Magic", "Magic the Gathering"),
+    ("Magic The Gathering", "Magic The Gathering"),
     ("Pokemon", "Pokemon"),
     ("Yu-Gi-Oh", "Yu-Gi-Oh"),
     ("DnD", "DnD"),
@@ -15,12 +15,12 @@ LOCATION_CHOICES = (
 )
 
 PRICE_CHOICES = (
-    ("0", "Any"),
+    ("Any", "Any"),
     ("0", "Free"),
-    ("5", "$5+"),
-    ("10", "$10+"),
-    ("20", "$20+"),
-    ("50", "$50+"),
+    ("5", "$5"),
+    ("10", "$10"),
+    ("20", "$20"),
+    ("50", "$50"),
 )
 
 CATEGORY_CHOICES = (
@@ -36,7 +36,7 @@ class DateInput(forms.DateInput):
 class EventSearchForm(forms.Form):
     activity = forms.MultipleChoiceField(label='Activity', choices=ACTIVITY_CHOICES, widget=forms.CheckboxSelectMultiple)
     location = forms.ChoiceField(label='Location', choices=LOCATION_CHOICES, required=False)
-    start_date = forms.DateField(label='Start Date', widget=DateInput(), initial=date.today())
-    end_date = forms.DateField(label='End Date', widget=DateInput(), required=False)
+    start_date = forms.DateField(label='After Date', widget=DateInput(), required=False)
+    end_date = forms.DateField(label='Before Date', widget=DateInput(), required=False)
     price = forms.ChoiceField(label='Price', choices=PRICE_CHOICES)
     category = forms.MultipleChoiceField(label='Category', choices=CATEGORY_CHOICES, widget=forms.CheckboxSelectMultiple)
