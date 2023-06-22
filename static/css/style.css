@@ -351,7 +351,7 @@ footer {
   cursor: pointer; }
 
 .event a {
-  display: inline-block;
+  display: none;
   height: 100%;
   width: 100%;
   padding: 1rem 0; }
@@ -403,6 +403,8 @@ footer {
   /* Fallback color */
   background-color: rgba(0, 0, 0, 0.9);
   /* Black w/ opacity */ }
+  #modal * {
+    margin: 1rem 0; }
 
 /* Modal Content (Image) */
 #modal-content {
@@ -426,7 +428,6 @@ footer {
     transform: scale(1); } }
 
 #google-map {
-  width: 100%;
   height: auto;
   text-align: center;
   padding: 3rem 6rem;

@@ -35,7 +35,7 @@ class DateInput(forms.DateInput):
 
 class EventSearchForm(forms.Form):
     activity = forms.MultipleChoiceField(label='Activity', choices=ACTIVITY_CHOICES, widget=forms.CheckboxSelectMultiple)
-    location = forms.ChoiceField(label='Location', choices=LOCATION_CHOICES)
+    location = forms.ChoiceField(label='Location', choices=LOCATION_CHOICES, required=False)
     start_date = forms.DateField(label='Start Date', widget=DateInput(), initial=date.today())
     end_date = forms.DateField(label='End Date', widget=DateInput(), required=False)
     price = forms.ChoiceField(label='Price', choices=PRICE_CHOICES)
