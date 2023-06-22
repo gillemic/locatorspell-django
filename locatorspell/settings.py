@@ -139,6 +139,8 @@ STATICFILES_FINDERS = [
     'sass_processor.finders.CssFinder',
 ]
 
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+
 django_heroku.settings(locals())
 
 SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, 'static')
