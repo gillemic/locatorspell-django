@@ -16,16 +16,15 @@
 		</div>
 	</form>
 	<div class="blog-posts">
+		{% for post in blog_posts %}
 		<div class="blog-post">
-			<h4>Blog Title 1 That Can Go On Two Lines</h4>
-			<p>Example text composed of part of the blog post</p>
-			<small>03/07/2023</small>
+			<h4>{{ post.title }}</h4>
+			<small>{{ post.date_posted }}</small>
+			<p>{{ post.post }}</p>
+			<br>
+			<a href="{% url 'blog:detail' post.id %}">View Blog Post</a>
 		</div>
-		<div class="blog-post">
-			<h4>Blog Title 2 That Can Go On Two Lines</h4>
-			<p>Example text composed of part of the blog post</p>
-			<small>03/08/2023</small>
-		</div>
+		{% endfor %}
 	</div>
 </div>
 {% endblock %}
