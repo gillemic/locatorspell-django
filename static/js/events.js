@@ -89,7 +89,7 @@ function quickSearch(query) {
             show = true;
         }
 
-        for (let j = 0; j < 3; j++) {
+        for (let j = 0; j < others.length; j++) {
             otherText = others[j].textContent || others[j].innerText;
             if (otherText.toUpperCase().indexOf(filter) > -1) {
                 show = true;

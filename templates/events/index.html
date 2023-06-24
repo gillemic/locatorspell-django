@@ -7,7 +7,7 @@
 
 {% block content %}
     <div id="spell-components">
-        <h3>Spell Components</h3>
+        <h4>Spell Components</h4>
         <form id="main-form" method="GET" action="/events">
             {% csrf_token %}
             {{ form }}
@@ -34,8 +34,12 @@
             <div class="event">
                 <!-- <a href="{% url 'events:detail' event.id %}"> -->
                     <h2>{{ event.name }}</h2>
-                    <p class="body-text">{{ event.tournament_organizer }}</p>
-                    <p class="body-text">{{ event.location }}</p>
+                    <p class="body-text"><i>{{ event.event_type }}</i></p>
+                    <p class="body-text">
+                        <b>{{ event.tournament_organizer }}</b>
+                        <br>
+                        {{ event.location }}
+                    </p>
                     <p class="body-text">{{ event.start_date }}</p>
                     <a href="{% url 'events:detail' event.id %}">Go to event page</a> 
                 <!-- </a> -->

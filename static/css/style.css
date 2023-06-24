@@ -3,7 +3,7 @@
   padding: 0; }
 
 body {
-  background: #FFFFFF;
+  background: #fdf5fd;
   position: relative;
   min-height: 100vh; }
 
@@ -74,7 +74,8 @@ footer {
   bottom: 0;
   margin-top: 1rem;
   position: absolute;
-  text-align: center; }
+  text-align: center;
+  background-color: #d9d9d9; }
 
 /* GENERAL CLASSES */
 .title-overlay {
@@ -108,8 +109,7 @@ footer {
 /* HEADER AND NAVBAR */
 .header {
   width: 100%;
-  display: block;
-  margin-bottom: 2rem; }
+  display: block; }
 
 .below-header {
   padding-bottom: 2.5rem;
@@ -153,9 +153,10 @@ footer {
     padding: 0 0.5rem; }
 
 .main-body {
-  margin: 0 1rem;
+  padding: 2rem 1rem;
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  background: #fdf5fd; }
 
 /* LANDING PAGE */
 .welcome-vid {
@@ -316,6 +317,9 @@ footer {
   #spell-components input {
     margin: 0.5rem 0 1rem 0;
     line-height: 1.5rem; }
+  #spell-components h3, #spell-components h4 {
+    text-align: center;
+    text-decoration: underline; }
 
 #hide-button {
   display: block; }
@@ -348,6 +352,8 @@ footer {
   border-color: #f7d1ad;
   color: Black;
   transition: 0.3s; }
+  .event p {
+    margin-top: 0.75rem; }
 
 .event:hover {
   background-color: #d6cec7;
@@ -385,6 +391,20 @@ footer {
 .showhide-wrapper {
   text-align: center; }
 
+.event-detail b {
+  font-size: 1.5rem; }
+
+.event-detail p {
+  margin: 0.75rem 0;
+  font-size: 1.25rem; }
+
+.event-detail h2 {
+  font-size: 3rem;
+  margin-bottom: 3rem; }
+
+.event-detail a {
+  font-size: 1.5rem; }
+
 /* MODAL FOR EVENTS PAGE */
 #modal {
   display: none;
@@ -407,8 +427,6 @@ footer {
   /* Fallback color */
   background-color: rgba(0, 0, 0, 0.9);
   /* Black w/ opacity */ }
-  #modal * {
-    margin: 1rem 0; }
 
 /* Modal Content (Image) */
 #modal-content {
@@ -419,6 +437,8 @@ footer {
   padding: 0.5rem 1rem;
   width: 80%;
   max-width: 700px; }
+  #modal-content a {
+    font-size: 1.75rem; }
 
 /* Add Animation - Zoom in the Modal */
 #modal-content {
